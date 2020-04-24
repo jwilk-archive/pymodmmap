@@ -1,3 +1,4 @@
+import __builtin__ as builtins
 import mmap
 import os
 import sys
@@ -32,9 +33,7 @@ for module in sys.modules.values():
         continue
     mmap_py(source)
 
-if __name__ == '__main__':
-    __builtins__ = __builtins__.__dict__
-original_import = __builtins__['__import__']
+original_import = builtins.__import__
 
 def __import__(*args, **kwargs):
     module = original_import(*args, **kwargs)
@@ -46,6 +45,6 @@ def __import__(*args, **kwargs):
         mmap_py(source)
     return module
 
-__builtins__['__import__'] = __import__
+builtins.__import__ = __import__
 
 # vim:ts=4 sts=4 sw=4 et
