@@ -1,6 +1,6 @@
-import sys
 import mmap
 import os
+import sys
 
 mmaps = {}
 
