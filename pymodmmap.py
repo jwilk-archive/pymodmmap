@@ -1,3 +1,8 @@
+# encoding=UTF-8
+
+# Copyright © 2014-2020 Jakub Wilk <jwilk@jwilk.net>
+# SPDX-License-Identifier: MIT
+
 import __builtin__ as builtins
 import mmap
 import os
