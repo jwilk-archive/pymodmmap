@@ -10,6 +10,10 @@ import sys
 
 mmaps = {}
 
+def _((x, y)): # Python 3 is not supported
+    pass
+del _
+
 def mmap_file(path):
     fd = os.open(path, os.O_RDONLY)
     try:
